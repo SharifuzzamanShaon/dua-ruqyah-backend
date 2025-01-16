@@ -20,7 +20,7 @@ app.get("/health", (req, res) => {
 });
 app.use(
   cors({
-    origin: "https://dua-ruqyah-weld-seven.vercel.app/",
+    origin: "https://dua-ruqyah-weld-seven.vercel.app",
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true, 
   })
