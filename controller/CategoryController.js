@@ -2,20 +2,19 @@ const { prisma } = require("../DB/ConnectDB");
 
 const getAllCategories = async (req, res, next) => {
   try {
-    // Fetch all categories with their subcategories
+    
     const categories = await prisma.category.findMany({
       include: {
-        subcategories: true, // Include subcategories for each category
+        subcategories: true, 
       },
     });
 
-    // Map the categories to add the subcategory details
     const categoriesWithDetails = categories.map((category) => ({
       id: category.id,
       cat_id: category.cat_id,
       cat_name_bn: category.cat_name_bn,
       cat_name_en: category.cat_name_en,
-      no_of_subcat: category.subcategories.length, // Count subcategories
+      no_of_subcat: category.subcategories.length, 
       no_of_dua: category.no_of_dua,
       cat_icon: category.cat_icon,
       subcategories: category.subcategories.map((subcat) => ({
