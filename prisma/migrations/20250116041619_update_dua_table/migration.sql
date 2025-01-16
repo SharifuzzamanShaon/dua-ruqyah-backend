@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE `Dua` MODIFY `top_bn` VARCHAR(500) NOT NULL,
+    MODIFY `top_en` VARCHAR(500) NOT NULL;
